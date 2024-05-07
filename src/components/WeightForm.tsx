@@ -1,4 +1,6 @@
+"use client";
 import * as React from "react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,8 +20,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { activityLevels } from "./FormArrays";
 
-export function CardForm() {
+export function WeightForm() {
+  const [weight, setWeight] = useState();
+  const [height, setHeight] = useState();
+  const [gender, setGender] = useState();
+
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -31,9 +38,14 @@ export function CardForm() {
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Current Weight</Label>
-              <Input id="name" placeholder="0 lbs" />
+              <Input id="name" placeholder="0" type="number" />
               <Label htmlFor="name">Current Height</Label>
-              <Input id="name" placeholder="''" />
+              <div className="flex flex-row space-x-3">
+                <Input id="name" placeholder="''" type="number" />
+                <Label htmlFor="name">FT</Label>
+                <Input id="name" placeholder="''" type="number" />
+                <Label htmlFor="name">IN</Label>
+              </div>
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="gender">Gender</Label>
@@ -52,10 +64,11 @@ export function CardForm() {
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="none">None</SelectItem>
-                  <SelectItem value="lightly">Lightly Active</SelectItem>
-                  <SelectItem value="moderately">Moderately Active</SelectItem>
-                  <SelectItem value="extreme">Extremely Active</SelectItem>
+                  {activityLevels.map((lvl) => (
+                    <SelectItem key={lvl.value} value={lvl.value}>
+                      {lvl.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
