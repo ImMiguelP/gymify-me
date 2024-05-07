@@ -5,4 +5,12 @@ export const activityLevels = [
   { value: "extreme", label: "Extremely Active" },
 ];
 
-export const GenderOptions = [{ value: "Male" }, { valeu: "Female" }];
+export const genderOptions = [{ value: "Male" }, { value: "Female" }];
+
+export const feetOptions = Array.from({ length: 4 }, (_, index) => ({
+  value: index + 4,
+}));
+
+export const inchesOptions = Array.from({ length: 11 }, (_, index) => ({
+  value: index + 1,
+}));
