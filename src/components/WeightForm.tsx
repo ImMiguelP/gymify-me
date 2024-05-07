@@ -20,7 +20,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { activityLevels } from "./FormArrays";
+import {
+  activityLevels,
+  feetOptions,
+  genderOptions,
+  inchesOptions,
+} from "./FormArrays";
 
 export function WeightForm() {
   const [weight, setWeight] = useState();
@@ -40,22 +45,43 @@ export function WeightForm() {
               <Label htmlFor="name">Current Weight</Label>
               <Input id="name" placeholder="0" type="number" />
               <Label htmlFor="name">Current Height</Label>
-              <div className="flex flex-row space-x-3">
-                <Input id="name" placeholder="''" type="number" />
-                <Label htmlFor="name">FT</Label>
-                <Input id="name" placeholder="''" type="number" />
-                <Label htmlFor="name">IN</Label>
+              <div className="flex flex-row items-center space-x-3">
+                <Select>
+                  <SelectTrigger id="gender">
+                    <SelectValue placeholder="ft" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {feetOptions.map((ft) => (
+                      <SelectItem value={String(ft.value)}>
+                        {ft.value}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Select>
+                  <SelectTrigger id="inches">
+                    <SelectValue placeholder="inches" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {inchesOptions.map((inches) => (
+                      <SelectItem value={String(inches.value)}>
+                        {inches.value}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="gender">Gender</Label>
               <Select>
                 <SelectTrigger id="gender">
-                  <SelectValue placeholder="Select" />
+                  <SelectValue placeholder="Select Gender" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="male">Male</SelectItem>
-                  <SelectItem value="female">Female</SelectItem>
+                  {genderOptions.map((gender) => (
+                    <SelectItem value={gender.value}>{gender.value}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
               <Label htmlFor="activity">Activity level</Label>
