@@ -52,7 +52,7 @@ export function WeightForm() {
                   </SelectTrigger>
                   <SelectContent>
                     {feetOptions.map((ft) => (
-                      <SelectItem value={String(ft.value)}>
+                      <SelectItem key={ft.value} value={String(ft.value)}>
                         {ft.value}
                       </SelectItem>
                     ))}
@@ -64,7 +64,7 @@ export function WeightForm() {
                   </SelectTrigger>
                   <SelectContent>
                     {inchesOptions.map((inches) => (
-                      <SelectItem value={String(inches.value)}>
+                      <SelectItem key={inches.value} value={String(inches.value)}>
                         {inches.value}
                       </SelectItem>
                     ))}
@@ -80,7 +80,7 @@ export function WeightForm() {
                 </SelectTrigger>
                 <SelectContent position="popper">
                   {genderOptions.map((gender) => (
-                    <SelectItem value={gender.value}>{gender.value}</SelectItem>
+                    <SelectItem key={gender.value} value={gender.value}>{gender.value}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
