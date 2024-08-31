@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Nav";
+import Head from "next/head";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -21,6 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <Head>
+          {/* Correctly preload a font */}
+          <link
+            rel="preload"
+            href="/fonts/my-font.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        </Head>
       <body
         className={cn(
           "min-h-screen bg-zinc-900 font-sans antialiased",
