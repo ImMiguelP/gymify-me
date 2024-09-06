@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 import TakedownHeading from "./components/heading";
-import Airdrop from "./components/airdrop";
+import AirdropHeading from "./components/airdrop";
 
 const TakedownHomePage = () => {
   return (
@@ -9,7 +9,7 @@ const TakedownHomePage = () => {
       {/* Header */}
       <TakedownHeading />
       {/* Airdrop Info */}
-      <Airdrop />
+      <AirdropHeading />
     </main>
   );
 };
