@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+import type * as React from "react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -20,11 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  genderOptions,
-  feetOptions,
-  inchesOptions,
-} from "./FormArrays";
+import { genderOptions, feetOptions, inchesOptions } from "./FormArrays";
 
 export function WeightForm() {
   const [age, setAge] = useState("");
@@ -58,10 +54,10 @@ export function WeightForm() {
     `;
 
     try {
-      const res = await fetch('/api/chatgpt', {
-        method: 'POST',
+      const res = await fetch("/api/chatgpt", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ prompt }),
       });
@@ -73,12 +69,16 @@ export function WeightForm() {
 
       const data = await res.json();
       if (!data.message) {
-        throw new Error('No message received from the server');
+        throw new Error("No message received from the server");
       }
       setResponse(data.message);
     } catch (error) {
-      console.error('Error:', error);
-      setError(error instanceof Error ? error.message : "An unexpected error occurred. Please try again.");
+      console.error("Error:", error);
+      setError(
+        error instanceof Error
+          ? error.message
+          : "An unexpected error occurred. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -87,73 +87,116 @@ export function WeightForm() {
   return (
     <Card className="w-[600px] bg-zinc-900 shadow-xl border border-zinc-700 text-zinc-300 h-[800px] flex flex-col">
       <CardHeader className="text-center py-4">
-        <CardTitle className="text-3xl font-bold text-red-500">Gymify Me</CardTitle>
-        <CardDescription className="text-zinc-400 text-lg mt-2">Forge Your Ideal Physique</CardDescription>
+        <CardTitle className="text-3xl font-bold text-red-500">
+          Gymify Me
+        </CardTitle>
+        <CardDescription className="text-zinc-400 text-lg mt-2">
+          Forge Your Ideal Physique
+        </CardDescription>
       </CardHeader>
       <CardContent className="py-4 flex-grow overflow-y-auto">
-        <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-x-6 gap-y-5">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-2 gap-x-6 gap-y-5"
+        >
           <div className="space-y-2">
-            <Label htmlFor="age" className="text-zinc-400 text-base">Age</Label>
-            <Input 
-              id="age" 
-              type="number" 
+            <Label htmlFor="age" className="text-zinc-400 text-base">
+              Age
+            </Label>
+            <Input
+              id="age"
+              type="number"
               value={age}
               onChange={(e) => setAge(e.target.value)}
-              className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg" 
+              className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="gender" className="text-zinc-400 text-base">Gender</Label>
+            <Label htmlFor="gender" className="text-zinc-400 text-base">
+              Gender
+            </Label>
             <Select onValueChange={(value) => setGender(value)}>
-              <SelectTrigger id="gender" className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg">
+              <SelectTrigger
+                id="gender"
+                className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
+              >
                 <SelectValue placeholder="Select Gender" />
               </SelectTrigger>
               <SelectContent className="bg-zinc-800 border-zinc-700">
                 {genderOptions.map((gender) => (
-                  <SelectItem key={gender.value} value={gender.value}>{gender.value}</SelectItem>
+                  <SelectItem key={gender.value} value={gender.value}>
+                    {gender.value}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
           <div className="space-y-2 col-span-2">
-            <Label htmlFor="height" className="text-zinc-400 text-base">Height</Label>
+            <Label htmlFor="height" className="text-zinc-400 text-base">
+              Height
+            </Label>
             <div className="flex space-x-4">
-              <Select onValueChange={(value) => setHeight(prev => ({ ...prev, feet: value }))}>
-                <SelectTrigger id="feet" className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg">
+              <Select
+                onValueChange={(value) =>
+                  setHeight((prev) => ({ ...prev, feet: value }))
+                }
+              >
+                <SelectTrigger
+                  id="feet"
+                  className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
+                >
                   <SelectValue placeholder="ft" />
                 </SelectTrigger>
                 <SelectContent className="bg-zinc-800 border-zinc-700">
                   {feetOptions.map((ft) => (
-                    <SelectItem key={ft.value} value={String(ft.value)}>{ft.value}</SelectItem>
+                    <SelectItem key={ft.value} value={String(ft.value)}>
+                      {ft.value}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-              <Select onValueChange={(value) => setHeight(prev => ({ ...prev, inches: value }))}>
-                <SelectTrigger id="inches" className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg">
+              <Select
+                onValueChange={(value) =>
+                  setHeight((prev) => ({ ...prev, inches: value }))
+                }
+              >
+                <SelectTrigger
+                  id="inches"
+                  className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
+                >
                   <SelectValue placeholder="in" />
                 </SelectTrigger>
                 <SelectContent className="bg-zinc-800 border-zinc-700">
                   {inchesOptions.map((inches) => (
-                    <SelectItem key={inches.value} value={String(inches.value)}>{inches.value}</SelectItem>
+                    <SelectItem key={inches.value} value={String(inches.value)}>
+                      {inches.value}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="weight" className="text-zinc-400 text-base">Current Weight (lbs)</Label>
-            <Input 
-              id="weight" 
-              type="number" 
+            <Label htmlFor="weight" className="text-zinc-400 text-base">
+              Current Weight (lbs)
+            </Label>
+            <Input
+              id="weight"
+              type="number"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
-              className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg" 
+              className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="goal" className="text-zinc-400 text-base">Goal</Label>
+            <Label htmlFor="goal" className="text-zinc-400 text-base">
+              Goal
+            </Label>
             <Select onValueChange={(value) => setGoal(value)}>
-              <SelectTrigger id="goal" className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg">
+              <SelectTrigger
+                id="goal"
+                className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
+              >
                 <SelectValue placeholder="Select Goal" />
               </SelectTrigger>
               <SelectContent className="bg-zinc-800 border-zinc-700">
@@ -163,18 +206,31 @@ export function WeightForm() {
             </Select>
           </div>
           <div className="space-y-2 col-span-2">
-            <Label htmlFor="dietaryRestrictions" className="text-zinc-400 text-base">Dietary Restrictions (Allergies etc.)</Label>
-            <Input 
-              id="dietaryRestrictions" 
+            <Label
+              htmlFor="dietaryRestrictions"
+              className="text-zinc-400 text-base"
+            >
+              Dietary Restrictions (Allergies etc.)
+            </Label>
+            <Input
+              id="dietaryRestrictions"
               value={dietaryRestrictions}
               onChange={(e) => setDietaryRestrictions(e.target.value)}
-              className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg" 
+              className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
             />
           </div>
           <div className="space-y-2 col-span-2">
-            <Label htmlFor="exerciseRoutine" className="text-zinc-400 text-base">Exercise Frequency</Label>
+            <Label
+              htmlFor="exerciseRoutine"
+              className="text-zinc-400 text-base"
+            >
+              Exercise Frequency
+            </Label>
             <Select onValueChange={(value) => setExerciseRoutine(value)}>
-              <SelectTrigger id="exerciseRoutine" className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg">
+              <SelectTrigger
+                id="exerciseRoutine"
+                className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
+              >
                 <SelectValue placeholder="Select Routine" />
               </SelectTrigger>
               <SelectContent className="bg-zinc-800 border-zinc-700">
@@ -187,12 +243,14 @@ export function WeightForm() {
             </Select>
           </div>
           <div className="space-y-2 col-span-2">
-            <Label htmlFor="healthIssues" className="text-zinc-400 text-base">Health Issues</Label>
-            <Input 
-              id="healthIssues" 
+            <Label htmlFor="healthIssues" className="text-zinc-400 text-base">
+              Health Issues
+            </Label>
+            <Input
+              id="healthIssues"
               value={healthIssues}
               onChange={(e) => setHealthIssues(e.target.value)}
-              className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg" 
+              className="bg-zinc-800 border-zinc-700 focus:border-red-500 focus:ring-red-500 text-zinc-300 h-12 text-lg"
             />
           </div>
         </form>
@@ -203,14 +261,16 @@ export function WeightForm() {
         )}
         {response && (
           <div className="mt-6 p-4 bg-zinc-800 rounded-lg">
-            <h3 className="text-xl font-semibold mb-2 text-red-500">Your Personalized Plan:</h3>
+            <h3 className="text-xl font-semibold mb-2 text-red-500">
+              Your Personalized Plan:
+            </h3>
             <p className="text-zinc-300 whitespace-pre-wrap">{response}</p>
           </div>
         )}
       </CardContent>
       <CardFooter className="pb-6">
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           onClick={handleSubmit}
           disabled={isLoading}
           className="w-full bg-red-600 text-white hover:bg-red-700 transition-colors text-xl py-6"
