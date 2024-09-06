@@ -7,10 +7,10 @@ const TakedownHeading = () => {
     <div className="flex flex-col w-full min-h-screen md:h-[1080px] justify-center items-center px-4 md:px-0 relative">
       <div className="w-full md:w-[778px] h-auto md:h-[617px] gap-8 md:gap-16 flex flex-col items-center justify-center z-10">
         <h1 className="w-full md:w-[938px] h-auto md:h-[244px] text-center mt-12 md:mt-24 mb-4 md:mb-8">
-          <span className="text-[#8A4EF7] text-5xl md:text-9xl font-bold leading-none font-jumboSale whitespace-normal md:whitespace-nowrap overflow-visible">
+          <span className="text-[#8A4EF7] text-8xl lg:text-9xl font-bold leading-none font-jumboSale whitespace-normal md:whitespace-nowrap overflow-visible">
             $SNACK TOKENS
           </span>
-          <span className="text-white text-7xl md:text-[192px] font-bold leading-none font-jumboSale block w-full">
+          <span className="text-white text-8xl lg:text-[192px] font-bold leading-none font-jumboSale block w-full">
             AIRDROP!
           </span>
         </h1>
@@ -19,8 +19,8 @@ const TakedownHeading = () => {
             Play Games, Win Trophies, Earn $SNACK Tokens
           </p>
         </div>
-        <Button className="max-w-[277px] w-full h-[50px] md:h-[70px] px-4 md:px-8 py-2 md:py-6 bg-[#DA613D] text-white rounded-3xl border-[3px] md:border-[5px] border-[#A83526] flex">
-          <p className="flex items-center justify-center max-w-[213px] w-full font-jumboSale text-xl md:text-[28px] font-thin leading-[1.2] md:leading-[35.2px]">
+        <Button className="max-w-[277px] w-full h-[70px] px-4 md:px-8 py-2 md:py-6 bg-[#DA613D] text-white rounded-3xl border-[5px] border-[#A83526] flex">
+          <p className="flex items-center justify-center max-w-[213px] w-full font-jumboSale text-[28px] font-thin leading-[1.2] md:leading-[35.2px]">
             LEADERBOARDS
           </p>
         </Button>
