@@ -42,9 +42,11 @@ export default function RootLayout({
           parisine.variable
         )}
       >
-        <main className="max-w-[1920px] mx-auto w-full flex-grow flex flex-col bg-[#180F2E]">
+        <main className="max-w-[1920px] mx-auto w-full flex-grow flex flex-col bg-[#180F2E] relative">
           {/* <Nav /> */}
-          <TakedownNav />
+          <div className="sticky top-0 z-50">
+            <TakedownNav />
+          </div>
           <div className="flex-grow bg-[#180F2E]">{children}</div>
         </main>
       </body>
