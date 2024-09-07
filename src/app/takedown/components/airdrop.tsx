@@ -121,6 +121,24 @@ const AirdropHeading = () => {
           />
         </div>
       </div>
+
+      {/* Rankings */}
+      <div className="w-full max-w-[1920px] py-8 px-4 flex flex-col items-center gap-8 sm:gap-12 md:gap-16">
+        <h1 className="w-full max-w-[803px] text-center text-4xl sm:text-5xl md:text-[64px] font-jumboSale font-thin leading-tight sm:leading-snug md:leading-[70.4px] text-white">
+          Competition and Rankings
+        </h1>
+        <Image
+          src="/leaderboard.svg"
+          alt="Leaderboard"
+          width={896}
+          height={448}
+          className="w-full max-w-[896px] h-auto object-cover"
+        />
+        <p className="max-w-[896px] w-full text-center text-2xl font-parisine font-bold leading-snug sm:leading-[30.58px] text-[#C7B4FE]">
+          Whether you have an NFT or not, everyone competes equally! Rewards are
+          for the top players based on their skills.
+        </p>
+      </div>
     </div>
   );
 };

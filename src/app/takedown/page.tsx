@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import TakedownHeading from "./components/heading";
 import AirdropHeading from "./components/airdrop";
+import MissionHeading from "./components/mission";
 
 const TakedownHomePage = () => {
   return (
@@ -10,6 +11,8 @@ const TakedownHomePage = () => {
       <TakedownHeading />
       {/* Airdrop Info */}
       <AirdropHeading />
+      {/* Mission */}
+      <MissionHeading />
     </main>
   );
 };
