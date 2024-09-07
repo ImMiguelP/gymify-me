@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import {
   FaXTwitter,
@@ -18,12 +19,24 @@ const TakedownFooter = () => {
   ];
 
   const socials = [
-    { name: "Discord", href: "#", icon: <FaDiscord className="w-6 h-6" /> },
+    {
+      name: "Discord",
+      href: "https://discord.com/invite/takedownlegends",
+      icon: <FaDiscord className="w-6 h-6" />,
+    },
     { name: "TikTok", href: "#", icon: <FaTiktok className="w-6 h-6" /> },
-    { name: "Instagram", href: "#", icon: <FaInstagram className="w-6 h-6" /> },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/takedownlegends/",
+      icon: <FaInstagram className="w-6 h-6" />,
+    },
     { name: "Facebook", href: "#", icon: <FaFacebookF className="w-6 h-6" /> },
     { name: "YouTube", href: "#", icon: <FaYoutube className="w-6 h-6" /> },
-    { name: "Twitter", href: "#", icon: <FaXTwitter className="w-6 h-6" /> },
+    {
+      name: "Twitter",
+      href: "https://x.com/TakedownLegends",
+      icon: <FaXTwitter className="w-6 h-6" />,
+    },
   ];
   return (
     <footer className="w-full h-[602px] px-64 py-24 flex flex-col gap-16">
@@ -78,12 +91,16 @@ const TakedownFooter = () => {
         </p>
         <div className="w-[464px] h-[64px] flex gap-4">
           {socials.map((social) => (
-            <Button
+            <Link
               key={social.name}
-              className="w-[64px] h-[64px] p-4 flex items-center justify-center gap-2 rounded-3xl border-2 border-[#884DF7] bg-[#611FB8] hover:bg-[#4D1893] transition-transform hover:translate-y-[-15px] active:translate-y-0"
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {social.icon}
-            </Button>
+              <Button className="w-[64px] h-[64px] p-4 flex items-center justify-center gap-2 rounded-3xl border-2 border-[#884DF7] bg-[#611FB8] hover:bg-[#4D1893] transition-transform hover:translate-y-[-15px] active:translate-y-0">
+                {social.icon}
+              </Button>
+            </Link>
           ))}
         </div>
       </div>
