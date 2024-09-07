@@ -66,19 +66,19 @@ const MissionHeading = () => {
           prizes.
         </p>
         <div className="w-full max-w-[529px] flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center">
-          <Button className="w-full sm:w-auto h-[72px] px-4 sm:px-8 py-6 gap-2 rounded-3xl border-[5px] border-[#180F2E] bg-[#884DF7] flex items-center justify-center shadow-[inset_0px_-6px_0px_0px_rgba(26,9,63,0.5)]">
+          <Button className="w-full sm:w-auto h-[72px] px-4 sm:px-8 py-6 gap-2 rounded-3xl border-[5px] border-[#180F2E] bg-[#884DF7] flex items-center justify-center shadow-[inset_0px_-6px_0px_0px_rgba(26,9,63,0.5)] transition-transform hover:translate-y-[-15px] active:translate-y-0 hover:bg-[#7038D6]">
             <span className="font-jumboSale text-2xl font-thin leading-[26.4px] text-left flex items-center justify-center gap-2">
               <FaInstagram className="w-5 h-5 sm:w-6 sm:h-6" />
               Instagram
             </span>
           </Button>
-          <Button className="w-full sm:w-auto h-[72px] px-4 sm:px-8 py-6 gap-2 rounded-3xl border-[5px] border-[#180F2E] bg-[#884DF7] flex items-center justify-center shadow-[inset_0px_-6px_0px_0px_rgba(26,9,63,0.5)]">
+          <Button className="w-full sm:w-auto h-[72px] px-4 sm:px-8 py-6 gap-2 rounded-3xl border-[5px] border-[#180F2E] bg-[#884DF7] flex items-center justify-center shadow-[inset_0px_-6px_0px_0px_rgba(26,9,63,0.5)] transition-transform hover:translate-y-[-15px] active:translate-y-0 hover:bg-[#7038D6]">
             <span className="font-jumboSale text-2xl font-thin leading-[26.4px] text-left flex items-center justify-center gap-2">
               <AiOutlineDiscord className="w-5 h-5 sm:w-6 sm:h-6" />
               Discord
             </span>
           </Button>
-          <Button className="w-full sm:w-auto h-[72px] px-4 sm:px-8 py-6 gap-2 rounded-3xl border-[5px] border-[#180F2E] bg-[#884DF7] flex items-center justify-center shadow-[inset_0px_-6px_0px_0px_rgba(26,9,63,0.5)]">
+          <Button className="w-full sm:w-auto h-[72px] px-4 sm:px-8 py-6 gap-2 rounded-3xl border-[5px] border-[#180F2E] bg-[#884DF7] flex items-center justify-center shadow-[inset_0px_-6px_0px_0px_rgba(26,9,63,0.5)] transition-transform hover:translate-y-[-15px] active:translate-y-0 hover:bg-[#7038D6]">
             <span className="font-jumboSale text-2xl font-thin leading-[26.4px] text-left flex items-center justify-center gap-2">
               <FaXTwitter className="w-5 h-5 sm:w-6 sm:h-6" />X
             </span>
