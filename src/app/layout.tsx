@@ -6,6 +6,7 @@ import Navbar from "@/components/Nav";
 import localFont from "next/font/local";
 import TakedownNav from "./takedown/components/nav";
 import type { PropsWithChildren } from "react";
+import TakedownFooter from "./takedown/components/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -48,6 +49,8 @@ export default function RootLayout({
             <TakedownNav />
           </div>
           <div className="flex-grow bg-[#180F2E]">{children}</div>
+
+          <TakedownFooter />
         </main>
       </body>
     </html>

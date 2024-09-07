@@ -19,7 +19,7 @@ const TakedownHeading = () => {
             Play Games, Win Trophies, Earn $SNACK Tokens
           </p>
         </div>
-        <Button className="max-w-[277px] w-full h-[70px] px-4 md:px-8 py-2 md:py-6 bg-[#DA613D] text-white rounded-3xl border-[5px] border-[#A83526] flex">
+        <Button className="max-w-[277px] w-full h-[70px] px-4 md:px-8 py-2 md:py-6 bg-[#DA613D] hover:bg-[#B84E31] text-white rounded-3xl border-[5px] border-[#A83526] flex transition-transform hover:translate-y-[-15px] active:translate-y-0">
           <p className="flex items-center justify-center max-w-[213px] w-full font-jumboSale text-[28px] font-thin leading-[1.2] md:leading-[35.2px]">
             LEADERBOARDS
           </p>
