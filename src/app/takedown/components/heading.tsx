@@ -5,12 +5,12 @@ import React from "react";
 const TakedownHeading = () => {
   return (
     <div className="flex flex-col w-full min-h-screen md:h-[1080px] justify-center items-center px-4 md:px-0 relative">
-      <div className="w-full md:w-[778px] h-auto md:h-[617px] gap-8 md:gap-16 flex flex-col items-center justify-center z-10">
+      <div className="w-full md:w-[778px] h-auto md:h-[617px] gap-8 md:gap-16 flex flex-col items-center justify-center z-10 mt-12 md:mt-16">
         <h1 className="w-full md:w-[938px] h-auto md:h-[244px] text-center mt-12 md:mt-24 mb-4 md:mb-8">
-          <span className="text-[#8A4EF7] text-8xl lg:text-9xl font-bold leading-none font-jumboSale whitespace-normal md:whitespace-nowrap overflow-visible">
+          <span className="text-[#8A4EF7] text-8xl lg:text-9xl font-bold leading-none font-jumboSale whitespace-normal md:whitespace-nowrap overflow-visible text-stroke-10">
             $SNACK TOKENS
           </span>
-          <span className="text-white text-8xl lg:text-[192px] font-bold leading-none font-jumboSale block w-full">
+          <span className="text-white text-8xl lg:text-[192px] font-bold leading-none font-jumboSale block w-full text-stroke-10">
             AIRDROP!
           </span>
         </h1>
